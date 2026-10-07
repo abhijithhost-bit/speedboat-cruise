@@ -313,7 +313,7 @@ export default function BookingWidget() {
             <div className="flex flex-col gap-4">
 
               {/* Date Picker */}
-              <div className="flex flex-col gap-2 relative" ref={dateRef}>
+              <div className={`flex flex-col gap-2 relative ${calOpen ? 'z-50' : 'z-10'}`} ref={dateRef}>
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-1">Select Date</label>
                 <button
                   onClick={() => setCalOpen(o => !o)}
@@ -340,13 +340,6 @@ export default function BookingWidget() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {calOpen && (
-                  <CalendarPopup
-                    selectedDate={selectedDate}
-                    onSelect={setSelectedDate}
-                    onClose={() => setCalOpen(false)}
-                  />
-                )}
               </div>
 
               {/* Preferred Time Picker */}
@@ -525,6 +518,13 @@ export default function BookingWidget() {
 
         </div>
       </div>
+      {calOpen && (
+        <CalendarPopup
+          selectedDate={selectedDate}
+          onSelect={setSelectedDate}
+          onClose={() => setCalOpen(false)}
+        />
+      )}
     </div>
   );
 }
