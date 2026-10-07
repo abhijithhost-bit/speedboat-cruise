@@ -399,7 +399,7 @@ export default function BookingWidget() {
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 max-h-[180px] overflow-y-auto pr-0.5 overscroll-contain">
                       {TIME_SLOTS.map(slot => {
                         const isSelected = selectedTime === slot;
-                        
+
                         let specialLabel = '';
                         if (slot === '6:00 AM' || slot === '6:30 AM') specialLabel = '🌅 Sunrise';
                         if (slot === '5:00 PM' || slot === '5:30 PM') specialLabel = '🌇 Sunset';
