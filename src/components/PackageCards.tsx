@@ -66,8 +66,7 @@ export default function PackageCards() {
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">{pkg.title}</h3>
                 <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mb-2" />
                 <p className="text-xs text-emerald-600 font-semibold mb-2">{pkg.urgency}</p>
-                {/* Price — WhatsApp for exact quote */}
-                <p className="text-[11px] text-gray-400 italic">WhatsApp us for pricing →</p>
+
               </div>
 
               <div className="flex-grow space-y-3 sm:space-y-4 mb-6 sm:mb-8">

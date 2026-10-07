@@ -65,7 +65,7 @@ function generateTimeSlots(): string[] {
   const slots: string[] = [];
   for (let h = 6; h <= 18; h++) {
     for (const m of [0, 30]) {
-      if (h === 18 && m === 30) break;
+      if (h === 19) break;
       const period = h < 12 ? 'AM' : 'PM';
       const displayH = h === 0 ? 12 : h > 12 ? h - 12 : h;
       const displayM = m === 0 ? '00' : '30';
@@ -98,28 +98,24 @@ function CalendarPopup({
   selectedDate,
   onSelect,
   onClose,
+  viewYear,
+  viewMonth,
+  onPrevMonth,
+  onNextMonth,
 }: {
   selectedDate: Date | null;
   onSelect: (d: Date) => void;
   onClose: () => void;
+  viewYear: number;
+  viewMonth: number;
+  onPrevMonth: () => void;
+  onNextMonth: () => void;
 }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const [viewYear, setViewYear] = useState(selectedDate?.getFullYear() ?? today.getFullYear());
-  const [viewMonth, setViewMonth] = useState(selectedDate?.getMonth() ?? today.getMonth());
-
   const daysInMonth = getDaysInMonth(viewYear, viewMonth);
   const firstDay = getFirstDayOfMonth(viewYear, viewMonth);
-
-  function prevMonth() {
-    if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); }
-    else setViewMonth(m => m - 1);
-  }
-  function nextMonth() {
-    if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); }
-    else setViewMonth(m => m + 1);
-  }
 
   const cells: (number | null)[] = [
     ...Array(firstDay).fill(null),
@@ -137,9 +133,9 @@ function CalendarPopup({
       {/* Calendar panel — centred on mobile, anchored on desktop */}
       <div className="fixed z-50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute md:top-[calc(100%+8px)] md:left-0 md:translate-x-0 md:translate-y-0 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 sm:p-5 w-[calc(100vw-2rem)] max-w-[19rem] ring-1 ring-black/5">
         <div className="flex items-center justify-between mb-4">
-          <button onClick={prevMonth} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-600 text-2xl leading-none" aria-label="Previous month">&#8249;</button>
+          <button onClick={onPrevMonth} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-600 text-2xl leading-none" aria-label="Previous month">&#8249;</button>
           <span className="text-sm font-bold text-gray-800">{MONTH_NAMES[viewMonth]} {viewYear}</span>
-          <button onClick={nextMonth} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-600 text-2xl leading-none" aria-label="Next month">&#8250;</button>
+          <button onClick={onNextMonth} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-600 text-2xl leading-none" aria-label="Next month">&#8250;</button>
         </div>
         <div className="grid grid-cols-7 mb-1">
           {DAY_NAMES.map(d => (
@@ -188,13 +184,28 @@ function CalendarPopup({
 
 // ─── Main Widget ──────────────────────────────────────────────────────────────
 export default function BookingWidget() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   const [selectedPkgId, setSelectedPkgId] = useState(PACKAGES[0].id);
   const [guests, setGuests] = useState(2);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [calOpen, setCalOpen] = useState(false);
+  // Calendar view state lifted here so it persists across open/close cycles
+  const [viewYear, setViewYear] = useState(today.getFullYear());
+  const [viewMonth, setViewMonth] = useState(today.getMonth());
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [timeOpen, setTimeOpen] = useState(false);
   const dateRef = useRef<HTMLDivElement>(null);
+
+  function prevMonth() {
+    if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); }
+    else setViewMonth(m => m - 1);
+  }
+  function nextMonth() {
+    if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); }
+    else setViewMonth(m => m + 1);
+  }
 
   const pkg = PACKAGES.find(p => p.id === selectedPkgId)!;
   const total = calcTotal(pkg, guests);
@@ -312,7 +323,7 @@ export default function BookingWidget() {
             {/* Right: Date + Time + Guests + Price + CTA */}
             <div className="flex flex-col gap-4">
 
-              {/* Date Picker */}
+              {/* Date Picker — CalendarPopup rendered INSIDE dateRef so outside-click detection works on desktop */}
               <div className={`flex flex-col gap-2 relative ${calOpen ? 'z-50' : 'z-10'}`} ref={dateRef}>
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-1">Select Date</label>
                 <button
@@ -340,6 +351,17 @@ export default function BookingWidget() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
+                {calOpen && (
+                  <CalendarPopup
+                    selectedDate={selectedDate}
+                    onSelect={setSelectedDate}
+                    onClose={() => setCalOpen(false)}
+                    viewYear={viewYear}
+                    viewMonth={viewMonth}
+                    onPrevMonth={prevMonth}
+                    onNextMonth={nextMonth}
+                  />
+                )}
               </div>
 
               {/* Preferred Time Picker */}
@@ -402,7 +424,7 @@ export default function BookingWidget() {
 
                         let specialLabel = '';
                         if (slot === '6:00 AM' || slot === '6:30 AM') specialLabel = '🌅 Sunrise';
-                        if (slot === '5:00 PM' || slot === '5:30 PM') specialLabel = '🌇 Sunset';
+                        if (slot === '6:00 PM' || slot === '6:30 PM') specialLabel = '🌇 Sunset';
 
                         return (
                           <button
@@ -518,13 +540,7 @@ export default function BookingWidget() {
 
         </div>
       </div>
-      {calOpen && (
-        <CalendarPopup
-          selectedDate={selectedDate}
-          onSelect={setSelectedDate}
-          onClose={() => setCalOpen(false)}
-        />
-      )}
+
     </div>
   );
 }
