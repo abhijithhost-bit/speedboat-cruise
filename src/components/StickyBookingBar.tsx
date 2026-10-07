@@ -3,14 +3,34 @@
 import { useEffect, useState } from 'react';
 
 export default function StickyBookingBar() {
-  const [visible, setVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isWidgetVisible, setIsWidgetVisible] = useState(false);
 
+  // Track scroll depth
   useEffect(() => {
-    // Show after scrolling 300px — user has expressed interest
-    const onScroll = () => setVisible(window.scrollY > 300);
+    const onScroll = () => setIsScrolled(window.scrollY > 300);
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Track if booking widget is on screen
+  useEffect(() => {
+    const widget = document.getElementById('booking-widget');
+    if (!widget) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsWidgetVisible(entry.isIntersecting);
+      },
+      { root: null, rootMargin: '0px', threshold: 0 }
+    );
+
+    observer.observe(widget);
+    return () => observer.disconnect();
+  }, []);
+
+  const visible = isScrolled && !isWidgetVisible;
 
   return (
     <div
