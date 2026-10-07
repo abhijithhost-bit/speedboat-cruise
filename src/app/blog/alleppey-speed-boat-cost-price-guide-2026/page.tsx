@@ -45,7 +45,7 @@ export default function BlogPost() {
       {/* Article Content */}
       <article className="container mx-auto px-4 sm:px-6 mt-12 max-w-3xl prose prose-lg prose-emerald prose-headings:text-gray-900 prose-a:text-emerald-600 hover:prose-a:text-emerald-700">
         <p className="lead text-xl text-gray-600 mb-8">
-          One of the most common questions we get is, <em>"How much does a speed boat cost in Alleppey?"</em> With varying durations, boat sizes, and peak season surges, finding accurate pricing can be tricky. This guide breaks down exactly what you should expect to pay in 2026.
+          One of the most common questions we get is, <em>"How much does a speed boat cost in Alleppey?"</em> Unlike other services that change prices based on the season, our speed boat rates are fixed year-round. This guide breaks down exactly what you should expect to pay in 2026.
         </p>
 
         <h2>1. Standard Speed Boat Packages & Exact Prices</h2>
@@ -73,19 +73,18 @@ export default function BlogPost() {
 
         <div className="my-8 bg-amber-50 rounded-2xl p-6 border border-amber-100">
           <h3 className="mt-0 text-amber-900">⚡ Quick Thrill (10 Minutes)</h3>
-          <p className="mb-2 text-amber-800">A high-speed adrenaline rush near the finishing point area.</p>
+          <p className="mb-2 text-amber-800">A high-speed adrenaline rush near the finishing point area. <strong>Note:</strong> This rate is fixed by the Alleppey Speed Boat Association, so every operator charges this exact same price.</p>
           <ul className="mt-0 mb-0 text-amber-800">
             <li><strong>Price:</strong> ₹400 per person</li>
             <li><strong>Minimum Charge:</strong> ₹1,300 (if you have fewer than 4 people)</li>
           </ul>
         </div>
 
-        <h2>2. Factors Affecting Speed Boat Prices</h2>
-        <p>If you are booking locally, you might notice that prices fluctuate. Here is why:</p>
+        <h2>2. Why Do Speed Boat Rides Cost This Much?</h2>
+        <p>A common question from visitors is why a short 10-minute or 30-minute ride costs this much. The answer comes down to two major factors:</p>
         <ul>
-          <li><strong>Peak Season vs. Off-Season:</strong> During peak tourist months (November to January) and local holidays like Onam, demand skyrockets, and touts may quote 20-30% higher prices. Booking in advance secures standard rates.</li>
-          <li><strong>Boat Capacity & Type:</strong> A standard speed boat seats 4-7 people. Larger boats or premium models cost slightly more per hour.</li>
-          <li><strong>Route & Fuel:</strong> A trip deep into the narrow canals consumes more time and fuel compared to a quick spin on the open lake. Always confirm the exact route before boarding.</li>
+          <li><strong>High Fuel Consumption:</strong> Speed boats are powered by massive, high-horsepower outboard marine engines. These engines burn a substantial amount of petrol to push the boat at high speeds across the water—much more than a car covering the same distance.</li>
+          <li><strong>Expensive Maintenance:</strong> Operating at high speeds in backwaters requires rigorous, costly maintenance. From hull integrity checks to regular engine servicing, keeping a speed boat safe and in peak condition is a significant continuous investment.</li>
         </ul>
 
         <h2>3. Frequently Asked Questions (FAQ)</h2>
@@ -94,7 +93,7 @@ export default function BlogPost() {
         <p>With reputable operators, what you see is what you pay. However, if you book through middle-men or street touts, they often add a hidden commission to the boat operator's base rate. Booking directly online ensures zero hidden fees.</p>
 
         <h4>Is it cheaper to book locally upon arrival?</h4>
-        <p>Not necessarily. While you can sometimes negotiate during the extreme off-season (monsoon), arriving without a booking during standard or peak seasons means you are at the mercy of the touts' asking prices. Plus, you risk wasting time waiting for an available boat.</p>
+        <p>No. Because our rates—and specifically the 10-minute ride rates—are standardized and fixed, you won't find seasonal discounts or cheaper rates by haggling at the dock. Booking online simply secures your boat and saves you from wasting time waiting at the crowded docks.</p>
 
         <h4>Do I need to pay extra for life jackets?</h4>
         <p>No! High-quality life jackets should always be included in the price. Your safety is paramount, and charging extra for essential safety gear is a major red flag.</p>
