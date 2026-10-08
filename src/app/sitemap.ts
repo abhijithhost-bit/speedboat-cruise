@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.speedboatcruisealleppey.com';
+  const baseUrl = 'https://speedboatalleppey.com';
   
   const staticRoutes: MetadataRoute.Sitemap = [
     {
