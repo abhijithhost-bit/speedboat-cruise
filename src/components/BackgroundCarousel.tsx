@@ -65,6 +65,7 @@ export default function BackgroundCarousel({
             alt="Speed boat in Alleppey backwaters — Kerala private cruise"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover"
           />
