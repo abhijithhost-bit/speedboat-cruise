@@ -45,6 +45,31 @@ export default function Home() {
   const galleryImages = allImages;
   return (
     <main className="relative min-h-screen bg-white text-gray-900 selection:bg-emerald-500/30 pb-[80px] md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Speed Boat Cruise Alleppey",
+            "image": "https://speedboatalleppey.com/hero-poster.jpg",
+            "description": "Private backwater speed boat cruise in Alleppey, Kerala. Experience thrilling rides and scenic beauty.",
+            "telephone": "+917012761588",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Finishing Point",
+              "addressLocality": "Alleppey",
+              "addressRegion": "Kerala",
+              "addressCountry": "IN"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "221"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[95vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
         <Navbar />
@@ -392,7 +417,10 @@ export default function Home() {
                 itemScope
                 itemType="https://schema.org/Review"
               >
-                <meta itemProp="itemReviewed" content="Speed Boat Cruise Alleppey" />
+                <div itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness">
+                  <meta itemProp="name" content="Speed Boat Cruise Alleppey" />
+                  <meta itemProp="image" content="https://speedboatalleppey.com/hero-poster.jpg" />
+                </div>
                 <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
                   <meta itemProp="ratingValue" content="5" />
                   <meta itemProp="bestRating" content="5" />
