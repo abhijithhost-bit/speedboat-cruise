@@ -39,7 +39,7 @@ export default function StickyBookingBar() {
       }`}
       style={{ bottom: 'calc(16px + env(safe-area-inset-bottom))' }}
     >
-      <div className="bg-white/80 backdrop-blur-xl border border-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] rounded-2xl p-2.5 flex items-center justify-between gap-3">
+      <div className="bg-white/80 backdrop-blur-xl transform-gpu border border-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] rounded-2xl p-2.5 flex items-center justify-between gap-3">
         {/* Text */}
         <div className="pl-2 flex-1 min-w-0">
           <p className="text-[13px] font-bold text-gray-900 leading-tight">Speed Boat Cruise</p>

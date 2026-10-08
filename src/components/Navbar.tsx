@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,7 +54,7 @@ export default function Navbar() {
         }`}
       >
         {/* ── Logo ── */}
-        <a href="#" className="flex items-center gap-2.5 group shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
           <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-emerald-400/40 group-hover:ring-emerald-400/80 transition-all duration-300 shadow-md">
             <Image
               src="/logo.png"
@@ -77,7 +78,7 @@ export default function Navbar() {
               Alleppey
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* ── Desktop Nav ── */}
         <div className="hidden md:flex items-center gap-0.5">

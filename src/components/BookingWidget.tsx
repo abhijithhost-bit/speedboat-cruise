@@ -6,8 +6,8 @@ import { createPortal } from 'react-dom';
 // ─── Packages ────────────────────────────────────────────────────────────────
 const PACKAGES = [
   { id: 'village-discovery', title: 'Village Discovery', duration: '1 Hour', basePrice: 5000, baseGuests: 3, extraPerPerson: 500, badge: 'Most Popular', emoji: '🛥️', activeBg: 'bg-gradient-to-br from-emerald-500 to-teal-600', activeShadow: 'shadow-emerald-500/25' },
-  { id: 'lake-explorer',     title: 'Lake Explorer',     duration: '30 Min', basePrice: 3000, baseGuests: 3, extraPerPerson: 400, badge: 'Popular',      emoji: '🌊', activeBg: 'bg-gradient-to-br from-blue-500 to-indigo-600',    activeShadow: 'shadow-blue-500/25' },
-  { id: 'quick-thrill',      title: 'Quick Thrill',      duration: '10 Min', basePrice: 1300, baseGuests: 3, extraPerPerson: 400, badge: 'Express',      emoji: '⚡', activeBg: 'bg-gradient-to-br from-orange-400 to-amber-500',  activeShadow: 'shadow-orange-400/25' },
+  { id: 'lake-explorer', title: 'Lake Explorer', duration: '30 Min', basePrice: 3000, baseGuests: 3, extraPerPerson: 400, badge: 'Popular', emoji: '🌊', activeBg: 'bg-gradient-to-br from-blue-500 to-indigo-600', activeShadow: 'shadow-blue-500/25' },
+  { id: 'quick-thrill', title: 'Quick Thrill', duration: '10 Min', basePrice: 1300, baseGuests: 3, extraPerPerson: 400, badge: 'Express', emoji: '⚡', activeBg: 'bg-gradient-to-br from-orange-400 to-amber-500', activeShadow: 'shadow-orange-400/25' },
 ];
 
 function calcTotal(pkg: typeof PACKAGES[number], guests: number): number {
@@ -35,8 +35,8 @@ function formatINR(n: number) { return `₹${n.toLocaleString('en-IN')}`; }
 function getDaysInMonth(y: number, m: number) { return new Date(y, m + 1, 0).getDate(); }
 function getFirstDayOfMonth(y: number, m: number) { return new Date(y, m, 1).getDay(); }
 
-const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const DAY_NAMES   = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const DAY_NAMES = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 // ─── Mobile Bottom Sheet ─────────────────────────────────────────────────────
 // iOS Safari breaks position:fixed popups inside scroll containers.
@@ -96,9 +96,9 @@ function CalendarGrid({ selectedDate, onSelect, viewYear, viewMonth, onPrevMonth
   viewYear: number; viewMonth: number; onPrevMonth: () => void; onNextMonth: () => void;
   atEarliestMonth: boolean; onClose: () => void;
 }) {
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
   const daysInMonth = getDaysInMonth(viewYear, viewMonth);
-  const firstDay   = getFirstDayOfMonth(viewYear, viewMonth);
+  const firstDay = getFirstDayOfMonth(viewYear, viewMonth);
   const cells: (number | null)[] = [
     ...Array(firstDay).fill(null),
     ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
@@ -121,10 +121,10 @@ function CalendarGrid({ selectedDate, onSelect, viewYear, viewMonth, onPrevMonth
         {cells.map((day, idx) => {
           if (!day) return <div key={`e-${idx}`} />;
           const cellDate = new Date(viewYear, viewMonth, day);
-          cellDate.setHours(0,0,0,0);
-          const isPast     = cellDate < today;
+          cellDate.setHours(0, 0, 0, 0);
+          const isPast = cellDate < today;
           const isSelected = selectedDate?.getFullYear() === viewYear && selectedDate?.getMonth() === viewMonth && selectedDate?.getDate() === day;
-          const isToday    = today.getFullYear() === viewYear && today.getMonth() === viewMonth && today.getDate() === day;
+          const isToday = today.getFullYear() === viewYear && today.getMonth() === viewMonth && today.getDate() === day;
           return (
             <button key={day} disabled={isPast}
               onClick={() => { onSelect(cellDate); onClose(); }}
@@ -152,7 +152,7 @@ function CalendarGrid({ selectedDate, onSelect, viewYear, viewMonth, onPrevMonth
 function DesktopCalendarDropdown({ open, onClose, anchorRef, popupRef, children }: {
   open: boolean; onClose: () => void;
   anchorRef: React.RefObject<HTMLDivElement | null>;
-  popupRef:  React.RefObject<HTMLDivElement | null>;
+  popupRef: React.RefObject<HTMLDivElement | null>;
   children: React.ReactNode;
 }) {
   const [style, setStyle] = useState<React.CSSProperties>({ visibility: 'hidden' });
@@ -195,17 +195,17 @@ function TimeChipGrid({ selectedTime, onSelect }: {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
       {TIME_SLOTS.map(slot => {
-        const active   = selectedTime === slot;
-        const sunrise  = slot === '6:00 AM' || slot === '6:30 AM';
-        const sunset   = slot === '6:00 PM' || slot === '6:30 PM';
-        const label    = sunrise ? '🌅 Sunrise' : sunset ? '🌇 Sunset' : '';
+        const active = selectedTime === slot;
+        const sunrise = slot === '6:00 AM' || slot === '6:30 AM';
+        const sunset = slot === '6:00 PM' || slot === '6:30 PM';
+        const label = sunrise ? '🌅 Sunrise' : sunset ? '🌇 Sunset' : '';
         return (
           <button key={slot} onClick={() => onSelect(active ? null : slot)} aria-pressed={active}
             className={[
               'rounded-xl px-1 py-2 flex flex-col items-center justify-center gap-0.5 transition-all duration-150 text-center leading-tight min-h-[48px]',
-              active  ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30 scale-[1.04]'
-                      : label ? 'bg-amber-50 border border-amber-200 text-gray-800 hover:border-emerald-300 hover:bg-emerald-50 active:bg-emerald-100'
-                               : 'bg-white border border-gray-200 text-gray-600 hover:border-emerald-300 hover:bg-emerald-50 active:bg-emerald-100',
+              active ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30 scale-[1.04]'
+                : label ? 'bg-amber-50 border border-amber-200 text-gray-800 hover:border-emerald-300 hover:bg-emerald-50 active:bg-emerald-100'
+                  : 'bg-white border border-gray-200 text-gray-600 hover:border-emerald-300 hover:bg-emerald-50 active:bg-emerald-100',
             ].join(' ')}>
             <span className="text-[12px] font-semibold">{slot}</span>
             {label && <span className={`text-[9px] uppercase tracking-wider font-bold ${active ? 'text-emerald-100' : 'text-amber-600'}`}>{label}</span>}
@@ -218,16 +218,16 @@ function TimeChipGrid({ selectedTime, onSelect }: {
 
 // ─── Main Widget ──────────────────────────────────────────────────────────────
 export default function BookingWidget() {
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
 
   const [selectedPkgId, setSelectedPkgId] = useState(PACKAGES[0].id);
-  const [guests,        setGuests]        = useState(2);
-  const [selectedDate,  setSelectedDate]  = useState<Date | null>(null);
-  const [calOpen,       setCalOpen]       = useState(false);
-  const [viewYear,      setViewYear]      = useState(today.getFullYear());
-  const [viewMonth,     setViewMonth]     = useState(today.getMonth());
-  const [selectedTime,  setSelectedTime]  = useState<string | null>(null);
-  const [timeOpen,      setTimeOpen]      = useState(false);
+  const [guests, setGuests] = useState(2);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [calOpen, setCalOpen] = useState(false);
+  const [viewYear, setViewYear] = useState(today.getFullYear());
+  const [viewMonth, setViewMonth] = useState(today.getMonth());
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [timeOpen, setTimeOpen] = useState(false);
 
   // Reactive mobile detection (avoids SSR mismatch)
   const [isMobile, setIsMobile] = useState(false);
@@ -239,7 +239,7 @@ export default function BookingWidget() {
     return () => mq.removeEventListener('change', h);
   }, []);
 
-  const dateRef  = useRef<HTMLDivElement>(null);
+  const dateRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
 
   function prevMonth() {
@@ -272,7 +272,7 @@ export default function BookingWidget() {
     return () => window.removeEventListener('select-package', h);
   }, []);
 
-  const pkg   = PACKAGES.find(p => p.id === selectedPkgId)!;
+  const pkg = PACKAGES.find(p => p.id === selectedPkgId)!;
   const total = calcTotal(pkg, guests);
 
   function formatDate(d: Date | null) {
@@ -290,7 +290,7 @@ export default function BookingWidget() {
   )}`;
 
   const triggerCls = (active: boolean) => [
-    'w-full flex items-center justify-between bg-white/70 backdrop-blur-sm border rounded-2xl px-4 py-3.5 transition-all min-h-[54px]',
+    'w-full flex items-center justify-between bg-white/70 backdrop-blur-sm transform-gpu border rounded-2xl px-4 py-3.5 transition-all min-h-[54px]',
     active ? 'border-emerald-400 bg-white ring-4 ring-emerald-500/10' : 'border-white/80 hover:border-emerald-200 hover:bg-white/90',
   ].join(' ');
 
@@ -305,7 +305,7 @@ export default function BookingWidget() {
 
   return (
     <div id="booking-widget" className="mt-10 sm:mt-16 mx-auto max-w-2xl w-full px-0">
-      <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl border border-white/80 shadow-[0_20px_48px_-16px_rgba(16,185,129,0.18)] overflow-visible">
+      <div className="relative bg-white/70 backdrop-blur-2xl transform-gpu will-change-transform rounded-3xl border border-white/80 shadow-[0_20px_48px_-16px_rgba(16,185,129,0.18)] overflow-visible">
         <div className="absolute -top-[1px] -left-[1px] -right-[1px] h-1.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 rounded-t-3xl" />
         <div className="p-4 sm:p-7 pt-6 sm:pt-8 flex flex-col gap-5 sm:gap-6">
 
@@ -412,7 +412,7 @@ export default function BookingWidget() {
                 )}
                 {!isMobile && (
                   <div className={['overflow-hidden transition-all duration-300 ease-in-out', timeOpen ? 'max-h-[280px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'].join(' ')}>
-                    <div className="bg-white/80 backdrop-blur-sm border border-white/80 rounded-2xl p-3 mt-1">
+                    <div className="bg-white/80 backdrop-blur-sm transform-gpu border border-white/80 rounded-2xl p-3 mt-1">
                       <div style={{ maxHeight: 210, overflowY: 'auto', WebkitOverflowScrolling: 'touch' as 'auto' }}>
                         <TimeChipGrid selectedTime={selectedTime} onSelect={(s) => { setSelectedTime(s); setTimeOpen(false); }} />
                       </div>
@@ -425,7 +425,7 @@ export default function BookingWidget() {
               {/* ── Guests ──────────────────────────────────── */}
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-1">Guests</label>
-                <div className="flex items-center justify-between bg-white/70 backdrop-blur-sm border border-white/80 rounded-2xl px-4 py-3 min-h-[54px]">
+                <div className="flex items-center justify-between bg-white/70 backdrop-blur-sm transform-gpu border border-white/80 rounded-2xl px-4 py-3 min-h-[54px]">
                   <div className="flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -433,10 +433,10 @@ export default function BookingWidget() {
                     <span className="text-sm font-semibold text-gray-900">{guests} {guests === 1 ? 'Guest' : 'Guests'}</span>
                   </div>
                   <div className="flex items-center gap-1 bg-gray-100/70 rounded-xl p-1">
-                    <button onClick={() => setGuests(g => Math.max(MIN_GUESTS, g-1))} disabled={guests <= MIN_GUESTS}
+                    <button onClick={() => setGuests(g => Math.max(MIN_GUESTS, g - 1))} disabled={guests <= MIN_GUESTS}
                       className="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-gray-700 font-bold text-lg shadow-sm hover:bg-gray-50 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed transition-all" aria-label="Decrease guests">−</button>
                     <span className="w-7 text-center text-sm font-bold text-gray-900 tabular-nums select-none">{guests}</span>
-                    <button onClick={() => setGuests(g => Math.min(MAX_GUESTS, g+1))} disabled={guests >= MAX_GUESTS}
+                    <button onClick={() => setGuests(g => Math.min(MAX_GUESTS, g + 1))} disabled={guests >= MAX_GUESTS}
                       className="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-gray-700 font-bold text-lg shadow-sm hover:bg-gray-50 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed transition-all" aria-label="Increase guests">+</button>
                   </div>
                 </div>

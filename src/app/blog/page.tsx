@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "family-activities-alleppey",
+    title: "Family Friendly Activities in Alleppey Backwaters",
+    excerpt:
+      "Planning a family trip to Alleppey? Discover the best family-friendly activities in the backwaters, from safe speedboat rides to village walks.",
+    date: "October 2026",
+    readTime: "6 min read",
+    category: "Family Guide",
+    image: "/hero-poster.jpg",
+    imageAlt: "Family friendly activities in Alleppey",
+  },
+  {
     slug: "alleppey-speed-boat-cost-price-guide-2026",
     title: "Alleppey Speed Boat Cost & Price Guide 2026",
     excerpt:
