@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`,
+        url: `${siteUrl}/hero-poster.jpg`,
         width: 1200,
         height: 630,
         alt: "Speed Boat Cruise Alleppey — #1 Private Kerala Backwater Tour",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Speed Boat in Alleppey | #1 Private Backwater Speed Boat Cruise",
     description:
       "Experience the thrill of a private speed boat in Alleppey's stunning backwaters. 10-min, 30-min & 1-hour packages. Rated 5★ on Google.",
-    images: [`${siteUrl}/og-image.jpg`],
+    images: [`${siteUrl}/hero-poster.jpg`],
   },
   robots: {
     index: true,
@@ -89,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+      <body className={`${poppins.variable} font-sans`}>
         <Script
           strategy="lazyOnload"
           data-project="67c40fd097d306c713a0bd02"
@@ -196,8 +196,7 @@ export default function RootLayout({
             })
           }}
         />
-      </head>
-      <body className={`${poppins.variable} font-sans`}>
+
         {children}
         {/* WhatsApp Floating Action Button — visible on md+ devices */}
         <div className="fixed bottom-28 right-4 md:bottom-6 md:right-6 z-[60] hidden md:flex items-center gap-3">
