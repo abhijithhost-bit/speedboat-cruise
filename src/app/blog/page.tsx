@@ -26,7 +26,7 @@ export const posts = [
     date: "October 2026",
     readTime: "6 min read",
     category: "Pricing Guide",
-    image: "/og-image.jpg",
+    image: "/alleppey_cost_guide.jpg",
     imageAlt: "Speed boat on Alleppey backwaters — cost and price guide",
   },
   {
@@ -37,7 +37,7 @@ export const posts = [
     date: "September 2026",
     readTime: "7 min read",
     category: "Travel Guide",
-    image: "/og-image.jpg",
+    image: "/hero-poster.jpg",
     imageAlt: "Speed boat on Alleppey backwaters — things to do in Alleppey",
   },
   {
@@ -48,7 +48,7 @@ export const posts = [
     date: "September 2026",
     readTime: "5 min read",
     category: "Comparison",
-    image: "/og-image.jpg",
+    image: "/speedboat_vs_houseboat.jpg",
     imageAlt: "Speed boat racing across Vembanad Lake in Alleppey, Kerala",
   },
   {
@@ -59,7 +59,7 @@ export const posts = [
     date: "September 2026",
     readTime: "6 min read",
     category: "Planning",
-    image: "/og-image.jpg",
+    image: "/alleppey_best_time.jpg",
     imageAlt: "Alleppey backwaters during golden hour — best time to visit",
   },
   {
@@ -70,7 +70,7 @@ export const posts = [
     date: "September 2026",
     readTime: "9 min read",
     category: "Complete Guide",
-    image: "/og-image.jpg",
+    image: "/alleppey_tour_guide.jpg",
     imageAlt: "Alleppey backwater tour guide — speed boat on Kerala canals",
   },
 ];

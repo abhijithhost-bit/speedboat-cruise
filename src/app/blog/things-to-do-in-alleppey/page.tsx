@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "10 Best Things to Do in Alleppey (2026)",
     description: "Local guide to the best experiences in Alappuzha — from speed boat rides to houseboat stays.",
     url: "https://www.speedboatcruisealleppey.com/blog/things-to-do-in-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.speedboatcruisealleppey.com/hero-poster.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -69,7 +69,7 @@ export default function ThingsToDo() {
           <div className="max-w-3xl mx-auto">
 
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 shadow-md">
-              <Image src="/og-image.jpg" alt="Speed boat ride in Alleppey — one of the best things to do in Kerala" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
+              <Image src="/hero-poster.jpg" alt="Speed boat ride in Alleppey — one of the best things to do in Kerala" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
             </div>
 
             <div className="prose prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-emerald-600 prose-strong:text-gray-900">

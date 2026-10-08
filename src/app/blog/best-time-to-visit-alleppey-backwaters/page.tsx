@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Best Time to Visit Alleppey Backwaters (Month-by-Month Guide)",
     description: "Local guide to when you should visit the Alleppey backwaters — weather, festivals, crowds and hidden season tips.",
     url: "https://www.speedboatcruisealleppey.com/blog/best-time-to-visit-alleppey-backwaters",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.speedboatcruisealleppey.com/alleppey_best_time.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -65,7 +65,7 @@ export default function BestTimeToVisit() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 shadow-md">
-              <Image src="/og-image.jpg" alt="Alleppey backwaters — best time to visit Kerala" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
+              <Image src="/alleppey_best_time.jpg" alt="Alleppey backwaters — best time to visit Kerala" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
             </div>
 
             <p className="text-xl text-gray-600 leading-relaxed font-medium border-l-4 border-emerald-500 pl-5 mb-10">

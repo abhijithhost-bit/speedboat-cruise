@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Speed Boat vs Houseboat in Alleppey — Which Should You Choose?",
     description: "An honest comparison of speed boats and houseboats in Alleppey to help you decide which experience is right for your trip.",
     url: "https://www.speedboatcruisealleppey.com/blog/speed-boat-vs-houseboat-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.speedboatcruisealleppey.com/speedboat_vs_houseboat.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -65,7 +65,7 @@ export default function SpeedBoatVsHouseboat() {
           <div className="max-w-3xl mx-auto">
 
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 shadow-md">
-              <Image src="/og-image.jpg" alt="Speed boat vs houseboat in Alleppey — comparison guide" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
+              <Image src="/speedboat_vs_houseboat.jpg" alt="Speed boat vs houseboat in Alleppey — comparison guide" fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" priority />
             </div>
 
             <p className="text-xl text-gray-600 leading-relaxed font-medium border-l-4 border-emerald-500 pl-5 mb-10">

@@ -18,7 +18,7 @@ export default function BlogPost() {
       <header className="bg-gray-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 relative">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/og-image.jpg"
+            src="/alleppey_cost_guide.jpg"
             alt="Speed boat on Alleppey backwaters"
             fill
             className="object-cover opacity-30"
@@ -89,13 +89,13 @@ export default function BlogPost() {
 
         <h2>3. Frequently Asked Questions (FAQ)</h2>
         
-        <h4>Are there any hidden fees?</h4>
+        <h3>Are there any hidden fees?</h3>
         <p>With reputable operators, what you see is what you pay. However, if you book through middle-men or street touts, they often add a hidden commission to the boat operator's base rate. Booking directly online ensures zero hidden fees.</p>
 
-        <h4>Is it cheaper to book locally upon arrival?</h4>
+        <h3>Is it cheaper to book locally upon arrival?</h3>
         <p>No. Because our rates—and specifically the 10-minute ride rates—are standardized and fixed, you won't find seasonal discounts or cheaper rates by haggling at the dock. Booking online simply secures your boat and saves you from wasting time waiting at the crowded docks.</p>
 
-        <h4>Do I need to pay extra for life jackets?</h4>
+        <h3>Do I need to pay extra for life jackets?</h3>
         <p>No! High-quality life jackets should always be included in the price. Your safety is paramount, and charging extra for essential safety gear is a major red flag.</p>
 
         {/* CTA */}
