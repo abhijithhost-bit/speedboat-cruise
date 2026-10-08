@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 // ─── Package Data ────────────────────────────────────────────────────────────
 // Pricing model:
@@ -102,6 +103,7 @@ function CalendarPopup({
   viewMonth,
   onPrevMonth,
   onNextMonth,
+  anchorRef,
 }: {
   selectedDate: Date | null;
   onSelect: (d: Date) => void;
@@ -110,6 +112,7 @@ function CalendarPopup({
   viewMonth: number;
   onPrevMonth: () => void;
   onNextMonth: () => void;
+  anchorRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -117,21 +120,51 @@ function CalendarPopup({
   const daysInMonth = getDaysInMonth(viewYear, viewMonth);
   const firstDay = getFirstDayOfMonth(viewYear, viewMonth);
 
+  // Desktop anchor position — measure trigger once on mount
+  const [desktopPos, setDesktopPos] = useState<{ top: number; left: number } | null>(null);
+  useEffect(() => {
+    function measure() {
+      if (anchorRef.current) {
+        const rect = anchorRef.current.getBoundingClientRect();
+        setDesktopPos({ top: rect.bottom + 8, left: rect.left });
+      }
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    window.addEventListener('scroll', measure, true);
+    return () => {
+      window.removeEventListener('resize', measure);
+      window.removeEventListener('scroll', measure, true);
+    };
+  }, [anchorRef]);
+
   const cells: (number | null)[] = [
     ...Array(firstDay).fill(null),
     ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
   ];
 
-  return (
+  // On mobile (<768px) use centered fixed; on desktop use anchor-relative fixed
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const panelStyle: React.CSSProperties = isMobile
+    ? { position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }
+    : desktopPos
+      ? { position: 'fixed', top: desktopPos.top, left: desktopPos.left }
+      : { position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' };
+
+  const popup = (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/10 sm:bg-transparent"
+        style={{ position: 'fixed', inset: 0, zIndex: 9998 }}
+        className="bg-black/20 sm:bg-black/5"
         onClick={onClose}
         aria-hidden="true"
       />
-      {/* Calendar panel — centred on mobile, anchored on desktop */}
-      <div className="fixed z-50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute md:top-[calc(100%+8px)] md:left-0 md:translate-x-0 md:translate-y-0 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 sm:p-5 w-[calc(100vw-2rem)] max-w-[19rem] ring-1 ring-black/5">
+      {/* Calendar panel */}
+      <div
+        style={{ ...panelStyle, zIndex: 9999 }}
+        className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 sm:p-5 w-[calc(100vw-2rem)] max-w-[19rem] ring-1 ring-black/5"
+      >
         <div className="flex items-center justify-between mb-4">
           <button onClick={onPrevMonth} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-600 text-2xl leading-none" aria-label="Previous month">&#8249;</button>
           <span className="text-sm font-bold text-gray-800">{MONTH_NAMES[viewMonth]} {viewYear}</span>
@@ -180,6 +213,10 @@ function CalendarPopup({
       </div>
     </>
   );
+
+  // Portal to body so we escape every stacking context
+  if (typeof document === 'undefined') return null;
+  return createPortal(popup, document.body);
 }
 
 // ─── Main Widget ──────────────────────────────────────────────────────────────
@@ -323,8 +360,8 @@ export default function BookingWidget() {
             {/* Right: Date + Time + Guests + Price + CTA */}
             <div className="flex flex-col gap-4">
 
-              {/* Date Picker — CalendarPopup rendered INSIDE dateRef so outside-click detection works on desktop */}
-              <div className={`flex flex-col gap-2 relative ${calOpen ? 'z-50' : 'z-10'}`} ref={dateRef}>
+              {/* Date Picker */}
+              <div className="flex flex-col gap-2 relative" ref={dateRef}>
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-1">Select Date</label>
                 <button
                   onClick={() => setCalOpen(o => !o)}
@@ -360,6 +397,7 @@ export default function BookingWidget() {
                     viewMonth={viewMonth}
                     onPrevMonth={prevMonth}
                     onNextMonth={nextMonth}
+                    anchorRef={dateRef}
                   />
                 )}
               </div>
