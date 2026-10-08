@@ -27,6 +27,7 @@ export default function Navbar() {
     { label: 'Packages', href: '/#packages' },
     { label: 'About', href: '/about' },
     { label: 'Gallery', href: '/gallery' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -104,7 +105,7 @@ export default function Navbar() {
 
             {/* CTA — always vivid */}
             <a
-              href="/contact"
+              href="/#packages"
               className={`ml-3 relative inline-flex items-center gap-1.5 font-bold uppercase tracking-widest text-white overflow-hidden group rounded-xl transition-all duration-500 ${scrolled ? 'px-5 py-2 text-[11px]' : 'px-6 py-2.5 text-[12px]'
                 }`}
             >
@@ -128,7 +129,7 @@ export default function Navbar() {
                 <line x1="8" x2="8" y1="2" y2="6" />
                 <line x1="3" x2="21" y1="10" y2="10" />
               </svg>
-              <span className="relative z-10">Contact Now</span>
+              <span className="relative z-10">Book Now</span>
             </a>
           </div>
 
@@ -170,7 +171,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="/contact"
+            href="/#packages"
             onClick={() => setMobileMenuOpen(false)}
             className="mt-3 relative flex items-center justify-center gap-2 py-3.5 rounded-xl text-white text-sm font-bold uppercase tracking-widest overflow-hidden group"
           >
@@ -193,7 +194,7 @@ export default function Navbar() {
               <line x1="8" x2="8" y1="2" y2="6" />
               <line x1="3" x2="21" y1="10" y2="10" />
             </svg>
-            <span className="relative z-10">Contact Now</span>
+            <span className="relative z-10">Book Now</span>
           </a>
         </div>
       </div>

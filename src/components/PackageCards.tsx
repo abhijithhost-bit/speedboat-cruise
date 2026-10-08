@@ -11,6 +11,7 @@ const PACKAGES = [
     features: ["Alleppey Terminals", "Boat Race Track", "Village Canals", "Kayinakary Photo Point", "Vembanad Lake Views"],
     distance: "30 km coverage",
     color: "from-emerald-400 to-teal-500",
+    textColor: "text-emerald-600",
   },
   {
     id: "lake-explorer",
@@ -22,6 +23,7 @@ const PACKAGES = [
     features: ["Alleppey Terminals", "Boat Race Track", "Village Canal Glimpses", "Vembanad Lake Entry"],
     distance: "15 km coverage",
     color: "from-blue-400 to-indigo-500",
+    textColor: "text-blue-600",
   },
   {
     id: "quick-thrill",
@@ -33,6 +35,7 @@ const PACKAGES = [
     features: ["Punnamada Lake", "Speed Experience", "Photo Opportunities"],
     distance: "7 km fun ride",
     color: "from-orange-400 to-amber-500",
+    textColor: "text-orange-600",
   },
 ];
 
@@ -64,15 +67,15 @@ export default function PackageCards() {
               <div className="mb-4 sm:mb-6">
                 <p className="text-gray-500 uppercase tracking-widest text-[10px] sm:text-xs font-bold mb-1 sm:mb-2">{pkg.time}</p>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">{pkg.title}</h3>
-                <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mb-2" />
-                <p className="text-xs text-emerald-600 font-semibold mb-2">{pkg.urgency}</p>
+                <div className={`h-1 w-12 bg-gradient-to-r ${pkg.color} rounded-full mb-2`} />
+                <p className={`text-xs ${pkg.textColor} font-semibold mb-2`}>{pkg.urgency}</p>
 
               </div>
 
               <div className="flex-grow space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {pkg.features.map((feature, f) => (
                   <div key={f} className="flex items-start gap-2 sm:gap-3 text-gray-600 text-xs sm:text-sm">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className={`w-4 h-4 sm:w-5 sm:h-5 ${pkg.textColor} flex-shrink-0 mt-0.5`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span>{feature}</span>
@@ -83,10 +86,7 @@ export default function PackageCards() {
               <div className="mt-auto space-y-3">
                 <button
                   onClick={() => handleSelect(pkg.id)}
-                  className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold transition-all duration-300 ${pkg.highlight
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-[1.02]'
-                    : 'bg-gray-900 text-white hover:bg-gray-700'
-                    }`}
+                  className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold transition-all duration-300 bg-gradient-to-r ${pkg.color} text-white shadow-lg hover:shadow-xl hover:scale-[1.02]`}
                 >
                   Select Package
                   <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
