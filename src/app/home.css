@@ -1,0 +1,88 @@
+/* home.css */
+
+/* 
+  Decorative Blur Elements Optimization 
+  Heavy blur filters (blur-[100px]) over large areas (96x96 rem) cause immense 
+  rendering lag on mobile devices. We use a radial gradient fallback on mobile 
+  to maintain the aesthetic without the expensive CSS filter operation.
+*/
+.decorative-blur {
+  position: absolute;
+  width: 24rem; /* w-96 */
+  height: 24rem; /* h-96 */
+  border-radius: 9999px;
+  /* Use hardware acceleration for static blurred elements */
+  transform: translateZ(0);
+}
+
+.decorative-blur-emerald {
+  top: 25%;
+  left: -16rem; /* -left-64 */
+  background-color: rgba(5, 150, 105, 0.2); /* bg-emerald-600/20 */
+  filter: blur(100px);
+}
+
+.decorative-blur-teal {
+  bottom: 25%;
+  right: -16rem; /* -right-64 */
+  background-color: rgba(13, 148, 136, 0.1); /* bg-teal-600/10 */
+  filter: blur(100px);
+}
+
+.decorative-blur-emerald-alt {
+  top: -8rem; /* -top-32 */
+  right: -8rem; /* -right-32 */
+  background-color: rgba(52, 211, 153, 0.1); /* bg-emerald-400/10 */
+  filter: blur(100px);
+}
+
+.decorative-blur-yellow {
+  bottom: -8rem; /* -bottom-32 */
+  left: -8rem; /* -left-32 */
+  background-color: rgba(250, 204, 21, 0.1); /* bg-yellow-400/10 */
+  filter: blur(100px);
+}
+
+@media (max-width: 768px) {
+  .decorative-blur {
+    /* Disable expensive blur filter on mobile */
+    filter: none;
+  }
+  
+  /* Simulate the blur effect using radial gradients (virtually zero rendering cost) */
+  .decorative-blur-emerald {
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, rgba(5, 150, 105, 0) 70%);
+  }
+  
+  .decorative-blur-teal {
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, rgba(13, 148, 136, 0) 70%);
+  }
+  
+  .decorative-blur-emerald-alt {
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0) 70%);
+  }
+  
+  .decorative-blur-yellow {
+    background: radial-gradient(circle, rgba(250, 204, 21, 0.1) 0%, rgba(250, 204, 21, 0) 70%);
+  }
+}
+
+/* Social proof pill optimization */
+.hero-social-pill {
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
+  border-radius: 9999px;
+  backdrop-filter: blur(12px); /* backdrop-blur-md */
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .hero-social-pill {
+    /* Solid background fallback for mobile instead of heavy blur */
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}

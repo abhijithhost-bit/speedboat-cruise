@@ -1,0 +1,114 @@
+/* BookingWidget.css */
+
+/* Mobile Sheet Optimizations */
+.mobile-sheet-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  transition: opacity 0.25s;
+  /* Force hardware acceleration */
+  transform: translateZ(0);
+}
+
+.mobile-sheet-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: max(env(safe-area-inset-bottom), 8px);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  /* translateZ(0) offloads rendering to the GPU, avoiding main-thread lag */
+  transform: translateY(100%) translateZ(0);
+  will-change: auto; /* Remove will-change: transform to save memory */
+}
+
+.mobile-sheet-content.open {
+  transform: translateY(0) translateZ(0);
+}
+
+/* Booking Widget Main Container */
+.booking-widget-container {
+  position: relative;
+  border-radius: 1.5rem; /* rounded-3xl */
+  border: 1px solid rgba(255, 255, 255, 0.8); /* border-white/80 */
+  box-shadow: 0 20px 48px -16px rgba(16, 185, 129, 0.18);
+  overflow: visible;
+  
+  /* Desktop styles with heavy blur */
+  background-color: rgba(255, 255, 255, 0.7); /* bg-white/70 */
+  backdrop-filter: blur(40px); /* backdrop-blur-2xl */
+  -webkit-backdrop-filter: blur(40px);
+  
+  /* Hardware acceleration */
+  transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  /* On mobile, remove expensive backdrop-blur and use an opaque background */
+  .booking-widget-container {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Maintain design by dropping a tiny shadow if needed, but solid color fixes the lag */
+  }
+}
+
+/* Desktop Calendar Dropdown */
+.desktop-calendar-dropdown {
+  background-color: #fff;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  padding: 1rem;
+  /* Next.js/Tailwind shadow-2xl and ring-1 */
+  --tw-ring-color: rgba(0, 0, 0, 0.05);
+  --tw-ring-shadow: 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* Force GPU rendering */
+  transform: translateZ(0);
+}
+
+/* Common trigger class */
+.booking-trigger-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  padding: 0.875rem 1rem;
+  transition: all 0.15s ease-in-out;
+  min-height: 54px;
+  
+  /* Base background */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
+  transform: translateZ(0);
+}
+
+.booking-trigger-btn:hover {
+  border-color: #a7f3d0; /* emerald-200 */
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.booking-trigger-btn.active {
+  border-color: #34d399; /* emerald-400 */
+  background-color: #fff;
+  --tw-ring-color: rgba(16, 185, 129, 0.1);
+  --tw-ring-shadow: 0 0 0 4px var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+}
+
+@media (max-width: 768px) {
+  .booking-trigger-btn {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

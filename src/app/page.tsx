@@ -9,6 +9,7 @@ import PackageCards from "@/components/PackageCards";
 import { videoData } from "@/components/video";
 import fs from "fs";
 import path from "path";
+import "./home.css";
 
 export default function Home() {
   // Discover all images from public/ at render time (server component)
@@ -82,7 +83,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-7 animate-fade-in pointer-events-auto">
 
             {/* Social proof pill */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <div className="inline-flex items-center gap-2 hero-social-pill px-4 py-1.5 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <span className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map(s => (
                   <svg key={s} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -168,8 +169,8 @@ export default function Home() {
       <section id="packages" className="py-24 relative overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -left-64 w-96 h-96 bg-emerald-600/20 rounded-full blur-[100px]" />
-          <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-teal-600/10 rounded-full blur-[100px]" />
+          <div className="decorative-blur decorative-blur-emerald" />
+          <div className="decorative-blur decorative-blur-teal" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -334,8 +335,8 @@ export default function Home() {
       <section id="reviews" className="relative py-16 sm:py-24 overflow-hidden bg-gray-50">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-400/10 rounded-full blur-[100px]" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-yellow-400/10 rounded-full blur-[100px]" />
+          <div className="decorative-blur decorative-blur-emerald-alt" />
+          <div className="decorative-blur decorative-blur-yellow" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">

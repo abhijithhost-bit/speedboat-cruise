@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import './BookingWidget.css';
 
 // ─── Packages ────────────────────────────────────────────────────────────────
 const PACKAGES = [
@@ -56,20 +57,13 @@ function MobileSheet({ open, onClose, title, children }: {
     <div style={{ position: 'fixed', inset: 0, zIndex: 9990, pointerEvents: open ? 'auto' : 'none' }}>
       {/* Backdrop */}
       <div
-        style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', opacity: open ? 1 : 0, transition: 'opacity 0.25s' }}
+        className="mobile-sheet-overlay"
+        style={{ opacity: open ? 1 : 0 }}
         onClick={onClose}
       />
       {/* Sheet */}
       <div
-        style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0,
-          background: '#fff', borderRadius: '20px 20px 0 0',
-          paddingBottom: 'max(env(safe-area-inset-bottom),8px)',
-          maxHeight: '88vh', display: 'flex', flexDirection: 'column',
-          transform: open ? 'translateY(0)' : 'translateY(100%)',
-          transition: 'transform 0.3s cubic-bezier(0.32,0.72,0,1)',
-          willChange: 'transform',
-        }}
+        className={`mobile-sheet-content ${open ? 'open' : ''}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 0' }}>
@@ -180,7 +174,7 @@ function DesktopCalendarDropdown({ open, onClose, anchorRef, popupRef, children 
       <div style={{ position: 'fixed', inset: 0, zIndex: 9990 }} onClick={onClose} />
       <div ref={popupRef as React.RefObject<HTMLDivElement>}
         style={{ ...style, zIndex: 9991, width: 320 }}
-        className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 ring-1 ring-black/5">
+        className="desktop-calendar-dropdown">
         {children}
       </div>
     </>,
@@ -290,8 +284,8 @@ export default function BookingWidget() {
   )}`;
 
   const triggerCls = (active: boolean) => [
-    'w-full flex items-center justify-between bg-white/70 backdrop-blur-sm transform-gpu border rounded-2xl px-4 py-3.5 transition-all min-h-[54px]',
-    active ? 'border-emerald-400 bg-white ring-4 ring-emerald-500/10' : 'border-white/80 hover:border-emerald-200 hover:bg-white/90',
+    'booking-trigger-btn',
+    active ? 'active' : '',
   ].join(' ');
 
   const calGrid = (
@@ -305,7 +299,7 @@ export default function BookingWidget() {
 
   return (
     <div id="booking-widget" className="mt-10 sm:mt-16 mx-auto max-w-2xl w-full px-0">
-      <div className="relative bg-white/70 backdrop-blur-2xl transform-gpu will-change-transform rounded-3xl border border-white/80 shadow-[0_20px_48px_-16px_rgba(16,185,129,0.18)] overflow-visible">
+      <div className="booking-widget-container">
         <div className="absolute -top-[1px] -left-[1px] -right-[1px] h-1.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 rounded-t-3xl" />
         <div className="p-4 sm:p-7 pt-6 sm:pt-8 flex flex-col gap-5 sm:gap-6">
 
@@ -425,7 +419,7 @@ export default function BookingWidget() {
               {/* ── Guests ──────────────────────────────────── */}
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-1">Guests</label>
-                <div className="flex items-center justify-between bg-white/70 backdrop-blur-sm transform-gpu border border-white/80 rounded-2xl px-4 py-3 min-h-[54px]">
+                <div className="flex items-center justify-between border border-white/80 rounded-2xl px-4 py-3 min-h-[54px] bg-white/95 md:bg-white/70 md:backdrop-blur-sm transform-gpu">
                   <div className="flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
