@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "shikara-boat-vs-speed-boat-alleppey",
+    title: "Shikara Boat vs Speed Boat in Alleppey | Which is Better?",
+    excerpt:
+      "Comparing Shikara boats and Speed boats in Alleppey backwaters. Learn about routes, pricing, speed, and why a speed boat might be your best choice.",
+    date: "October 2026",
+    readTime: "7 min read",
+    category: "Comparison",
+    image: "/shikara_vs_speedboat.jpg",
+    imageAlt: "Speed boat vs Shikara in Alleppey",
+  },
+  {
     slug: "family-activities-alleppey",
     title: "Family Friendly Activities in Alleppey Backwaters",
     excerpt:
