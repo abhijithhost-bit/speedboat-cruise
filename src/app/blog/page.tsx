@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "alleppey-speed-boat-routes-guide",
+    title: "Alleppey Speed Boat Routes Explained: Punnamada, Kainakary & Vembanad Lake",
+    excerpt:
+      "A complete guide to Alleppey speed boat routes. Discover 10-min, 30-min, and 1-hour packages, exact distances, landmarks, and narrow village canal access.",
+    date: "October 2026",
+    readTime: "8 min read",
+    category: "Route Guide",
+    image: "/alleppey_speedboat_routes.jpeg",
+    imageAlt: "Speed boat cruising through Alleppey backwater routes",
+  },
+  {
     slug: "shikara-boat-vs-speed-boat-alleppey",
     title: "Shikara Boat vs Speed Boat in Alleppey | Which is Better?",
     excerpt:
