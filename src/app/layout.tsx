@@ -10,7 +10,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const siteUrl = "https://www.speedboatcruisealleppey.com";
+const siteUrl = "https://speedboatcruisealleppey.com";
 
 export const metadata: Metadata = {
   title: "Speed Boat in Alleppey | #1 Private Backwater Speed Boat Cruise",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/hero-poster.jpg`,
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Speed Boat Cruise Alleppey — #1 Private Kerala Backwater Tour",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Speed Boat in Alleppey | #1 Private Backwater Speed Boat Cruise",
     description:
       "Experience the thrill of a private speed boat in Alleppey's stunning backwaters. 10-min, 30-min & 1-hour packages. Rated 5★ on Google.",
-    images: [`${siteUrl}/hero-poster.jpg`],
+    images: [`${siteUrl}/og-image.jpg`],
   },
   robots: {
     index: true,
