@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Best Time to Visit Alleppey Backwaters — Month-by-Month Guide | Speed Boat Cruise Alleppey",
   description:
     "When is the best time to visit Alleppey backwaters? Month-by-month guide covering Kerala weather, monsoon season, crowds, festivals, and when to get the best backwater experience.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/best-time-to-visit-alleppey-backwaters" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/best-time-to-visit-alleppey-backwaters" },
   openGraph: {
     title: "Best Time to Visit Alleppey Backwaters (Month-by-Month Guide)",
     description: "Local guide to when you should visit the Alleppey backwaters — weather, festivals, crowds and hidden season tips.",
-    url: "https://www.speedboatcruisealleppey.com/blog/best-time-to-visit-alleppey-backwaters",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/alleppey_best_time.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/best-time-to-visit-alleppey-backwaters",
+    images: [{ url: "https://speedboatalleppey.com/alleppey_best_time.jpg", width: 1200, height: 630 }],
   },
 };
 

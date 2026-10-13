@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Planning a speed boat cruise in Alleppey? Discover exact prices, packages, and tips on how to avoid hidden fees in our 2026 cost guide.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/blog/alleppey-speed-boat-cost-price-guide-2026",
+    canonical: "https://speedboatalleppey.com/blog/alleppey-speed-boat-cost-price-guide-2026",
   },
 };
 

@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Shikara Boat vs Speed Boat in Alleppey | Which is Better?",
   description:
     "Comparing Shikara boats and Speed boats in Alleppey backwaters. Learn about routes, pricing, speed, and why a speed boat might be your best choice.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/shikara-boat-vs-speed-boat-alleppey" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/shikara-boat-vs-speed-boat-alleppey" },
   openGraph: {
     title: "Shikara Boat vs Speed Boat in Alleppey",
     description: "The definitive comparison between Shikara and Speed Boat in Alleppey.",
-    url: "https://www.speedboatcruisealleppey.com/blog/shikara-boat-vs-speed-boat-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/shikara_vs_speedboat.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/shikara-boat-vs-speed-boat-alleppey",
+    images: [{ url: "https://speedboatalleppey.com/shikara_vs_speedboat.jpg", width: 1200, height: 630 }],
   },
 };
 

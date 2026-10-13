@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Family Friendly Activities in Alleppey Backwaters | Speed Boat Cruise",
   description:
     "Planning a family trip to Alleppey? Discover the best family-friendly activities in the backwaters, from safe speedboat rides to village walks and cultural experiences.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/family-activities-alleppey" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/family-activities-alleppey" },
   openGraph: {
     title: "Family Friendly Activities in Alleppey Backwaters",
     description: "The definitive guide to family-friendly activities in Alleppey.",
-    url: "https://www.speedboatcruisealleppey.com/blog/family-activities-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/hero-poster.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/family-activities-alleppey",
+    images: [{ url: "https://speedboatalleppey.com/hero-poster.jpg", width: 1200, height: 630 }],
   },
 };
 

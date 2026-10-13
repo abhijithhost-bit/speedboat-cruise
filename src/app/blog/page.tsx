@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Tips, guides and travel advice for visiting Alleppey, Kerala. Read about the best things to do, when to visit, houseboat vs speed boat, and how to explore the backwaters.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/blog",
+    canonical: "https://speedboatalleppey.com/blog",
   },
   openGraph: {
     title: "Alleppey Travel Blog — Tips & Guides",
     description: "Expert travel guides for Alleppey, Kerala — written by locals who live and work on the backwaters every day.",
-    url: "https://www.speedboatcruisealleppey.com/blog",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog",
+    images: [{ url: "https://speedboatalleppey.com/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

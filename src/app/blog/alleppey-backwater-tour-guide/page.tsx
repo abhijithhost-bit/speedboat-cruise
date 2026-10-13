@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Complete Guide to Alleppey Backwater Tours — Prices, Tips & What to Expect | Speed Boat Cruise Alleppey",
   description:
     "Everything you need to know about Alleppey backwater tours — types of tours, prices, what's included, how to book, what to bring, and insider tips from local operators.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/alleppey-backwater-tour-guide" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/alleppey-backwater-tour-guide" },
   openGraph: {
     title: "Complete Guide to Alleppey Backwater Tours — Prices, Tips & What to Expect",
     description: "The definitive guide to booking and experiencing an Alleppey backwater tour — written by people who run one every single day.",
-    url: "https://www.speedboatcruisealleppey.com/blog/alleppey-backwater-tour-guide",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/alleppey_tour_guide.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/alleppey-backwater-tour-guide",
+    images: [{ url: "https://speedboatalleppey.com/alleppey_tour_guide.jpg", width: 1200, height: 630 }],
   },
 };
 

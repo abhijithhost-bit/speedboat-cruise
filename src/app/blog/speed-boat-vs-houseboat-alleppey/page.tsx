@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Speed Boat vs Houseboat in Alleppey — Which is Better? | Speed Boat Cruise Alleppey",
   description:
     "Speed boat or houseboat in Alleppey? We break down cost, experience, best for families vs couples, and how to choose between these two iconic Kerala backwater experiences.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/speed-boat-vs-houseboat-alleppey" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/speed-boat-vs-houseboat-alleppey" },
   openGraph: {
     title: "Speed Boat vs Houseboat in Alleppey — Which Should You Choose?",
     description: "An honest comparison of speed boats and houseboats in Alleppey to help you decide which experience is right for your trip.",
-    url: "https://www.speedboatcruisealleppey.com/blog/speed-boat-vs-houseboat-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/speedboat_vs_houseboat.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/speed-boat-vs-houseboat-alleppey",
+    images: [{ url: "https://speedboatalleppey.com/speedboat_vs_houseboat.jpg", width: 1200, height: 630 }],
   },
 };
 

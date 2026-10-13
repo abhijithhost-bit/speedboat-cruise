@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "10 Best Things to Do in Alleppey (2026) | Speed Boat Cruise Alleppey",
   description:
     "Planning a trip to Alleppey? Discover the 10 best things to do in Alappuzha — from speed boat rides and houseboat stays to temple visits and backwater kayaking. Local guide for 2026.",
-  alternates: { canonical: "https://www.speedboatcruisealleppey.com/blog/things-to-do-in-alleppey" },
+  alternates: { canonical: "https://speedboatalleppey.com/blog/things-to-do-in-alleppey" },
   openGraph: {
     title: "10 Best Things to Do in Alleppey (2026)",
     description: "Local guide to the best experiences in Alappuzha — from speed boat rides to houseboat stays.",
-    url: "https://www.speedboatcruisealleppey.com/blog/things-to-do-in-alleppey",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/hero-poster.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/blog/things-to-do-in-alleppey",
+    images: [{ url: "https://speedboatalleppey.com/hero-poster.jpg", width: 1200, height: 630 }],
   },
 };
 

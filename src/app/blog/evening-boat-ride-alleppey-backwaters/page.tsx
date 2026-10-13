@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description:
     "Experience an enchanting evening boat ride in Alleppey backwaters. Discover golden hour timings, Vembanad Lake sunset views, dusk safety tips, and speed boat packages.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/blog/evening-boat-ride-alleppey-backwaters",
+    canonical: "https://speedboatalleppey.com/blog/evening-boat-ride-alleppey-backwaters",
   },
   openGraph: {
     title: "Evening Boat Ride in Alleppey Backwaters: Sunset Experience, Timings & Tips",
     description:
       "A complete guide to sunset and evening boat rides in Alleppey. Golden hour timings, open Vembanad Lake views, the 5:30 PM houseboat curfew contrast, and photography tips.",
-    url: "https://www.speedboatcruisealleppey.com/blog/evening-boat-ride-alleppey-backwaters",
+    url: "https://speedboatalleppey.com/blog/evening-boat-ride-alleppey-backwaters",
     images: [
       {
-        url: "https://www.speedboatcruisealleppey.com/alleppey_sunset_boat_ride.jpg",
+        url: "https://speedboatalleppey.com/alleppey_sunset_boat_ride.jpg",
         width: 1200,
         height: 630,
         alt: "Private speed boat cruising during sunset on Vembanad Lake in Alleppey Kerala",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Evening Boat Ride in Alleppey Backwaters: Sunset Experience, Timings & Tips",
     description:
       "Golden hour in Alleppey! Discover timings, sunset views over Vembanad Lake, and why speed boats offer the ultimate dusk experience.",
-    images: ["https://www.speedboatcruisealleppey.com/alleppey_sunset_boat_ride.jpg"],
+    images: ["https://speedboatalleppey.com/alleppey_sunset_boat_ride.jpg"],
   },
 };
 
@@ -68,27 +68,27 @@ export default function EveningBoatRideAlleppeyPage() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Evening Boat Ride in Alleppey Backwaters: Sunset Experience, Timings & Tips",
-    "image": "https://www.speedboatcruisealleppey.com/alleppey_sunset_boat_ride.jpg",
+    "image": "https://speedboatalleppey.com/alleppey_sunset_boat_ride.jpg",
     "datePublished": "2026-10-13T00:00:00+05:30",
     "dateModified": "2026-10-13T00:00:00+05:30",
     "author": {
       "@type": "Organization",
       "name": "Speed Boat Cruise Alleppey",
-      "url": "https://www.speedboatcruisealleppey.com",
+      "url": "https://speedboatalleppey.com",
     },
     "publisher": {
       "@type": "Organization",
       "name": "Speed Boat Cruise Alleppey",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.speedboatcruisealleppey.com/logo.png",
+        "url": "https://speedboatalleppey.com/logo.png",
       },
     },
     "description":
       "A complete guide to sunset and evening boat rides in Alleppey backwaters. Golden hour timings, open Vembanad Lake views, dusk safety tips, and package recommendations.",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.speedboatcruisealleppey.com/blog/evening-boat-ride-alleppey-backwaters",
+      "@id": "https://speedboatalleppey.com/blog/evening-boat-ride-alleppey-backwaters",
     },
   };
 

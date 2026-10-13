@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Meet the team behind Speed Boat Cruise Alleppey. Learn our story, our commitment to safety, and why we're Kerala's most trusted private speed boat operator on the Alleppey backwaters.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/about",
+    canonical: "https://speedboatalleppey.com/about",
   },
   openGraph: {
     title: "About Speed Boat Cruise Alleppey — Our Story",
     description: "Meet the local experts behind Alleppey's #1 rated private speed boat experience. Certified pilots, eco-friendly engines, 221+ five-star reviews.",
-    url: "https://www.speedboatcruisealleppey.com/about",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/about",
+    images: [{ url: "https://speedboatalleppey.com/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

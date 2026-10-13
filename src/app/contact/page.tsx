@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Speed Boat Cruise Alleppey. Call or WhatsApp us to book your private Kerala backwater speed boat tour. Located at Finishing Point, Alappuzha.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/contact",
+    canonical: "https://speedboatalleppey.com/contact",
   },
   openGraph: {
     title: "Contact Speed Boat Cruise Alleppey",
     description:
       "Book your private speed boat ride in Alleppey. Call +91 70127 61588 or WhatsApp us. Located at Finishing Point, Alappuzha, Kerala.",
-    url: "https://www.speedboatcruisealleppey.com/contact",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/contact",
+    images: [{ url: "https://speedboatalleppey.com/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

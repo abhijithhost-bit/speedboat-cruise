@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Terms and conditions for Speed Boat Cruise Alleppey. Read our booking policy, cancellation policy, safety rules, and liability information for speed boat rides in Kerala.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/terms-and-conditions",
+    canonical: "https://speedboatalleppey.com/terms-and-conditions",
   },
   robots: {
     index: true,

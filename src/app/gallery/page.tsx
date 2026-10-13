@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "See photos and videos from our private speed boat rides in Alleppey. Real customer moments on the Kerala backwaters, Vembanad Lake, and village canals. Rated 5★ on Google.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/gallery",
+    canonical: "https://speedboatalleppey.com/gallery",
   },
   openGraph: {
     title: "Speed Boat Photos in Alleppey — Gallery",
     description: "Real photos from private speed boat rides through Alleppey's Kerala backwaters. See why we're rated #1.",
-    url: "https://www.speedboatcruisealleppey.com/gallery",
-    images: [{ url: "https://www.speedboatcruisealleppey.com/og-image.jpg", width: 1200, height: 630 }],
+    url: "https://speedboatalleppey.com/gallery",
+    images: [{ url: "https://speedboatalleppey.com/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

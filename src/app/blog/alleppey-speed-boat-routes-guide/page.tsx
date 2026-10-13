@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description:
     "Explore Alleppey speed boat routes: 1-hour village safari (30km), 30-min lake loop (15km), and 10-min thrill ride (7km). Detailed map itinerary, landmarks & canal guide.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/blog/alleppey-speed-boat-routes-guide",
+    canonical: "https://speedboatalleppey.com/blog/alleppey-speed-boat-routes-guide",
   },
   openGraph: {
     title: "Alleppey Speed Boat Routes Explained — Punnamada, Kainakary & Vembanad Lake",
     description:
       "A complete guide to speed boat routes in Alleppey backwaters. Discover where speedboats travel, distances covered, and why they reach canals houseboats cannot.",
-    url: "https://www.speedboatcruisealleppey.com/blog/alleppey-speed-boat-routes-guide",
+    url: "https://speedboatalleppey.com/blog/alleppey-speed-boat-routes-guide",
     images: [
       {
-        url: "https://www.speedboatcruisealleppey.com/alleppey_speedboat_routes.jpeg",
+        url: "https://speedboatalleppey.com/alleppey_speedboat_routes.jpeg",
         width: 1200,
         height: 630,
         alt: "Speed boat cruising through Alleppey backwater routes",
@@ -59,27 +59,27 @@ export default function AlleppeySpeedBoatRoutesPage() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Alleppey Speed Boat Routes Explained — Punnamada, Kainakary & Vembanad Lake",
-    "image": "https://www.speedboatcruisealleppey.com/alleppey_speedboat_routes.jpeg",
+    "image": "https://speedboatalleppey.com/alleppey_speedboat_routes.jpeg",
     "datePublished": "2026-10-11T00:00:00+05:30",
     "dateModified": "2026-10-11T00:00:00+05:30",
     "author": {
       "@type": "Organization",
       "name": "Speed Boat Cruise Alleppey",
-      "url": "https://www.speedboatcruisealleppey.com",
+      "url": "https://speedboatalleppey.com",
     },
     "publisher": {
       "@type": "Organization",
       "name": "Speed Boat Cruise Alleppey",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.speedboatcruisealleppey.com/logo.png",
+        "url": "https://speedboatalleppey.com/logo.png",
       },
     },
     "description":
       "A complete guide to speed boat routes in Alleppey backwaters. Discover where speedboats travel, distances covered, and why they reach canals houseboats cannot.",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.speedboatcruisealleppey.com/blog/alleppey-speed-boat-routes-guide",
+      "@id": "https://speedboatalleppey.com/blog/alleppey-speed-boat-routes-guide",
     },
   };
 

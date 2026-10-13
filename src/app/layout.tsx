@@ -10,7 +10,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const siteUrl = "https://speedboatcruisealleppey.com";
+const siteUrl = "https://speedboatalleppey.com";
 
 export const metadata: Metadata = {
   title: "Speed Boat in Alleppey | #1 Private Backwater Speed Boat Cruise",
@@ -105,13 +105,13 @@ export default function RootLayout({
               "@type": ["LocalBusiness", "TouristAttraction"],
               "name": "Speed Boat Cruise Alleppey",
               "description": "The best speed boat in Alleppey offering private backwater tours through Vembanad Lake and Kerala village canals. 10-min, 30-min and 1-hour packages available.",
-              "url": "https://www.speedboatcruisealleppey.com",
+              "url": "https://speedboatalleppey.com",
               "telephone": "+917012761588",
               "email": "abhijithabcd74@gmail.com",
               "image": [
-                "https://www.speedboatcruisealleppey.com/og-image.jpg",
-                "https://www.speedboatcruisealleppey.com/WhatsApp%20Image%202026-01-19%20at%2012.39.45%20PM.jpeg",
-                "https://www.speedboatcruisealleppey.com/WhatsApp%20Image%202026-01-19%20at%2012.29.42%20PM.jpeg"
+                "https://speedboatalleppey.com/og-image.jpg",
+                "https://speedboatalleppey.com/WhatsApp%20Image%202026-01-19%20at%2012.39.45%20PM.jpeg",
+                "https://speedboatalleppey.com/WhatsApp%20Image%202026-01-19%20at%2012.29.42%20PM.jpeg"
               ],
               "sameAs": [
                 "https://share.google/kNsH1xQ3FxnArAbS1"
@@ -190,7 +190,7 @@ export default function RootLayout({
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Speed Boat Cruise Alleppey",
-                  "item": "https://www.speedboatcruisealleppey.com"
+                  "item": "https://speedboatalleppey.com"
                 }
               ]
             })

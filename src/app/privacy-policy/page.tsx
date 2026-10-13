@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for Speed Boat Cruise Alleppey. Learn how we handle your information when you contact us to book a private speed boat ride in Alleppey, Kerala.",
   alternates: {
-    canonical: "https://www.speedboatcruisealleppey.com/privacy-policy",
+    canonical: "https://speedboatalleppey.com/privacy-policy",
   },
   robots: {
     index: true,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const lastUpdated = "30 September 2026";
 const businessName = "Speed Boat Cruise Alleppey";
 const email = "abhijithabcd74@gmail.com";
-const siteUrl = "https://www.speedboatcruisealleppey.com";
+const siteUrl = "https://speedboatalleppey.com";
 
 export default function PrivacyPolicyPage() {
   return (
