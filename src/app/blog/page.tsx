@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "evening-boat-ride-alleppey-backwaters",
+    title: "Evening Boat Ride in Alleppey Backwaters: Sunset Experience, Timings & Tips",
+    excerpt:
+      "Why the evening golden hour is the most magical time to cruise the Kerala backwaters. Discover sunset timings, open Vembanad Lake views, dusk safety rules, and speed boat packages.",
+    date: "October 2026",
+    readTime: "7 min read",
+    category: "Sunset & Evening",
+    image: "/alleppey_sunset_boat_ride.jpg",
+    imageAlt: "Evening speed boat ride on Vembanad Lake during sunset in Alleppey",
+  },
+  {
     slug: "alleppey-speed-boat-routes-guide",
     title: "Alleppey Speed Boat Routes Explained: Punnamada, Kainakary & Vembanad Lake",
     excerpt:

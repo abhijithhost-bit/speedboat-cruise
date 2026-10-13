@@ -457,7 +457,11 @@ export default function AlleppeySpeedBoatRoutesPage() {
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-500 font-bold">🌇</span>
                     <div>
-                      <strong>Golden Hour Sunset (4:30 PM – 6:15 PM):</strong> The most popular slot. As the sun sinks behind the coconut palms on Vembanad Lake, the sky turns gold and violet. Remember that all boats must return to the dock by sunset curfew (6:30 PM).
+                      <strong>Golden Hour Sunset (4:30 PM – 6:15 PM):</strong> The most popular slot. As the sun sinks behind the coconut palms on Vembanad Lake, the sky turns gold and violet. For complete timing and photography advice, read our dedicated guide to an{" "}
+                      <Link href="/blog/evening-boat-ride-alleppey-backwaters" className="text-emerald-600 underline font-semibold hover:text-emerald-700">
+                        evening boat ride in Alleppey backwaters
+                      </Link>
+                      . Remember that all boats must return to the dock by sunset curfew (6:30 PM).
                     </div>
                   </li>
                 </ul>
@@ -474,16 +478,16 @@ export default function AlleppeySpeedBoatRoutesPage() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <Link
+                  href="/blog/evening-boat-ride-alleppey-backwaters"
+                  className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-all text-xs font-semibold text-gray-700 hover:text-emerald-700 hover:shadow-sm"
+                >
+                  🌅 Evening Boat Ride &amp; Sunset Guide →
+                </Link>
+                <Link
                   href="/blog/alleppey-speed-boat-cost-price-guide-2026"
                   className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-all text-xs font-semibold text-gray-700 hover:text-emerald-700 hover:shadow-sm"
                 >
                   💰 Speed Boat Cost &amp; Price Guide 2026 →
-                </Link>
-                <Link
-                  href="/blog/shikara-boat-vs-speed-boat-alleppey"
-                  className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-all text-xs font-semibold text-gray-700 hover:text-emerald-700 hover:shadow-sm"
-                >
-                  ⚖️ Shikara vs Speed Boat Comparison →
                 </Link>
                 <Link
                   href="/blog/speed-boat-vs-houseboat-alleppey"
