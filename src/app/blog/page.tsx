@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "alleppey-1-day-trip-itinerary",
+    title: "Alleppey 1-Day Trip Itinerary: Best Way to Experience the Backwaters in 24 Hours",
+    excerpt:
+      "Short on time? Follow our hour-by-hour local itinerary covering private backwater speed boat rides, authentic Kerala seafood, colonial heritage, and sunset viewpoints without losing hours.",
+    date: "October 2026",
+    readTime: "8 min read",
+    category: "Itinerary Guide",
+    image: "/alleppey_1day_itinerary.jpg",
+    imageAlt: "Private speed boat gliding along Alleppey backwaters on a 1-day itinerary",
+  },
+  {
     slug: "evening-boat-ride-alleppey-backwaters",
     title: "Evening Boat Ride in Alleppey Backwaters: Sunset Experience, Timings & Tips",
     excerpt:
