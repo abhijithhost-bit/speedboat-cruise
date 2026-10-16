@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "how-to-reach-alleppey-from-kochi",
+    title: "How to Reach Alleppey from Kochi — Distance, Cab Fare & Best Route (2026)",
+    excerpt:
+      "Flying into Cochin Airport or staying in Kochi? Get exact distances, 2026 taxi fares, travel times, and step-by-step directions for the scenic NH66 route straight to Alleppey's famous backwaters.",
+    date: "October 2026",
+    readTime: "7 min read",
+    category: "Route Guide",
+    image: "/alleppey_kochi_route.jpg",
+    imageAlt: "Scenic Kerala road through coconut palms — driving from Kochi to Alleppey",
+  },
+  {
     slug: "alleppey-1-day-trip-itinerary",
     title: "Alleppey 1-Day Trip Itinerary: Best Way to Experience the Backwaters in 24 Hours",
     excerpt:
