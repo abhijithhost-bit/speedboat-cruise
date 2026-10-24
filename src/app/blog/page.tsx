@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "alleppey-speed-boat-safety-guide",
+    title: "Is Speed Boating Safe in Alleppey? Safety Rules, Life Jackets & Guidelines (2026)",
+    excerpt:
+      "Wondering if speed boats are safe in Alleppey backwaters? Learn about Kerala Maritime Board safety regulations, certified life jackets, non-swimmer guidance, and weather protocols.",
+    date: "October 2026",
+    readTime: "8 min read",
+    category: "Safety Guide",
+    image: "/alleppey_speedboat_safety.jpg",
+    imageAlt: "Safe private speed boat cruise with certified life jackets on Alleppey backwaters",
+  },
+  {
     slug: "how-to-reach-alleppey-from-kochi",
     title: "How to Reach Alleppey from Kochi — Distance, Cab Fare & Best Route (2026)",
     excerpt:

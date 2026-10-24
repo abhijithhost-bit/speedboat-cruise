@@ -127,9 +127,10 @@ export default function FamilyActivitiesAlleppey() {
 
             <div className="mt-12 pt-8 border-t border-gray-200">
               <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Related Articles</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/blog/things-to-do-in-alleppey" className="flex-1 p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-colors text-sm font-medium text-gray-700 hover:text-emerald-700">10 Best Things to Do in Alleppey →</Link>
-                <Link href="/blog/alleppey-backwater-tour-guide" className="flex-1 p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-colors text-sm font-medium text-gray-700 hover:text-emerald-700">Backwater Tour Guide →</Link>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <Link href="/blog/alleppey-speed-boat-safety-guide" className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-colors text-sm font-medium text-gray-700 hover:text-emerald-700">🛡️ Boat Safety &amp; Kids Guide →</Link>
+                <Link href="/blog/things-to-do-in-alleppey" className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-colors text-sm font-medium text-gray-700 hover:text-emerald-700">10 Best Things to Do →</Link>
+                <Link href="/blog/alleppey-backwater-tour-guide" className="p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-colors text-sm font-medium text-gray-700 hover:text-emerald-700">Backwater Tour Guide →</Link>
               </div>
             </div>
           </div>
