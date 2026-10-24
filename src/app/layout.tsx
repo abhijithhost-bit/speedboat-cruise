@@ -88,8 +88,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} font-sans`}>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
         <Script
           strategy="lazyOnload"
           data-project="67c40fd097d306c713a0bd02"

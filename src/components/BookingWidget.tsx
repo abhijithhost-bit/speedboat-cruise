@@ -155,7 +155,7 @@ function DesktopCalendarDropdown({ open, onClose, anchorRef, popupRef, children 
     function pos() {
       if (!anchorRef.current) return;
       const r = anchorRef.current.getBoundingClientRect();
-      const W = 320, H = 380, vw = window.innerWidth, vh = window.innerHeight;
+      const W = 320, H = popupRef.current?.offsetHeight || 380, vw = window.innerWidth, vh = window.innerHeight;
       const dropAbove = vh - r.bottom - 12 < H && r.top > H;
       let left = r.left;
       if (left + W > vw - 8) left = vw - W - 8;
@@ -166,7 +166,7 @@ function DesktopCalendarDropdown({ open, onClose, anchorRef, popupRef, children 
     window.addEventListener('resize', pos);
     window.addEventListener('scroll', pos, true);
     return () => { window.removeEventListener('resize', pos); window.removeEventListener('scroll', pos, true); };
-  }, [open, anchorRef]);
+  }, [open, anchorRef, popupRef, popupRef.current]);
 
   if (!open || typeof document === 'undefined') return null;
   return createPortal(
@@ -364,7 +364,13 @@ export default function BookingWidget() {
                     {selectedDate && (
                       <span role="button" tabIndex={0}
                         onClick={(e) => { e.stopPropagation(); setSelectedDate(null); }}
-                        onKeyDown={(e) => { if (e.key === 'Enter') { e.stopPropagation(); setSelectedDate(null); } }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                            if (e.key === ' ' || e.key === 'Spacebar') e.preventDefault();
+                            e.stopPropagation();
+                            setSelectedDate(null);
+                          }
+                        }}
                         className="w-5 h-5 rounded-full bg-gray-200 hover:bg-red-100 hover:text-red-500 flex items-center justify-center transition-colors text-gray-400 cursor-pointer" aria-label="Clear date">
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
                       </span>
