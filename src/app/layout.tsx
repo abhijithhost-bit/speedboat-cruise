@@ -73,6 +73,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
   },
+  verification: {
+    google: 'C7NipWpAQcE9Z4gHjdKOOb1KyfjDUvzN_TAQyrsZhZ4',
+  },
 };
 
 export const viewport: Viewport = {
