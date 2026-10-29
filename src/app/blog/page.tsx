@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: "kainakary-village-canal-speed-boat-tour",
+    title: "Kainakary Village Backwater Guide: Canals, Paddy Fields & Speed Boat Tour (2026)",
+    excerpt:
+      "Step off the tourist trail into Kuttanad's cultural heartland. Learn how private speed boats explore Kainakary's narrow palm canals, UNESCO sub-sea-level rice fields, and 1-hour cruise routes.",
+    date: "October 2026",
+    readTime: "8 min read",
+    category: "Village & Canal Guide",
+    image: "/kainakary_village_speedboat_tour.jpg",
+    imageAlt: "Private speed boat gliding along a narrow palm-fringed canal in Kainakary village, Alleppey",
+  },
+  {
     slug: "alleppey-speed-boat-safety-guide",
     title: "Is Speed Boating Safe in Alleppey? Safety Rules, Life Jackets & Guidelines (2026)",
     excerpt:
